@@ -10,6 +10,7 @@
     margin-bottom: 0;
     font-size: 12px;
     letter-spacing: 5px;
+    position: relative;
 }
 .navbar-nav  li a:hover {
     color: #1abc9c !important;
@@ -43,4 +44,29 @@
 
 #posts h1{
     text-align: center;
+}
+
+.dark{
+    color: black;
+    background-color: none;
+    display:inline ;
+    border: none;
+    position: absolute;
+    right:  3%;
+    bottom: 40%;
+}
+
+.dark:hover{
+    color: white;
+    background-color: black ;
+}
+
+.light{
+    color: black;
+    background-color: none;
+    display:inline ;
+    border: none;
+    position: absolute;
+    right:  3%;
+    bottom: 40%;
 }

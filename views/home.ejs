@@ -1,5 +1,10 @@
-<%- include("partials/header") -%>
 
+<% if(Dark == "true") { %>
+<%- include("partials/headerDark") -%>
+<% } else{ %>
+   <%- include("partials/header") -%>
+<% } %>
+<% console.log(Dark) %>
 <h1>Home</h1>
 <p><%= Home %></p>
 <% Posts.forEach(function(post){%>
