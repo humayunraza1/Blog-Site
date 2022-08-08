@@ -3,7 +3,10 @@
 <h1>Home</h1>
 <p><%= Home %></p>
 <% Posts.forEach(function(post){%>
- <h1><%= post.title %></h1>
+<div class="container" id="posts" style="background-color: <%=post.color%>; color: <%=post.fontC%>;">
+    <h1><%= post.title %></h1>
  <p><%= post.body.substring(0, 100) + " ..." %> <a href="posts/<%= post.title%>">Read More</a> </p>
-<%});%>
+    <%=console.log(post.color)%>
+</div>
+ <%});%>
     <%- include("partials/footer") -%>

@@ -1,10 +1,16 @@
 <%- include("partials/header") -%>
 
 <h1>Compose</h1>
-<div class="form-group">
+<div class="form-group col-sm-6">
     <form action="/" method="post">
         <label for="">Title</label>
         <input type="text" name="postTitle" class="form-control">
+<select class="form-select" name="pColor" aria-label=".form-select-sm example">
+    <option selected>Choose Div Color</option>
+    <option value="1">Red</option>
+    <option value="2">Black</option>
+    <option value="3">White</option>
+  </select>
         <label for="">Post</label>
         <textarea class="form-control" id="exampleFormControlTextarea1" rows="5" cols="30" name="postBody"></textarea>
         <button type="submit" name="button" class="btn btn-primary">Publish</button>

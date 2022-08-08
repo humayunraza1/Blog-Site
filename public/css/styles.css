@@ -37,3 +37,10 @@
 .btn{
    margin-top: 20px; 
 }
+#posts{
+    border-radius: 10px;
+}
+
+#posts h1{
+    text-align: center;
+}
