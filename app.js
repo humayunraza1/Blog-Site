@@ -20,7 +20,7 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static("public"));
 
 app.get("/",function(req,res){
-  console.log(posts);
+  // console.log(posts);
   res.render("home",{Posts:posts, Dark: isDark});
 })
 
@@ -39,7 +39,7 @@ app.get("/contact",function(req,res){
 
 
 app.post("/", function(req,res){
-  var content = req.body.postBody;
+  var content = new String(req.body.postBody);
   var Title = req.body.postTitle;
   var color = req.body.pColor;
   
@@ -68,7 +68,7 @@ app.post("/", function(req,res){
     color: colorName,
     fontC: fontColor  
   };
-  console.log(req.body.pColor);
+  console.log(content.length);
   posts.push(post);
   res.redirect("/");
 })

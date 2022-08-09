@@ -6,7 +6,7 @@
    <%- include("partials/header") -%>
  <style>.posting-body label{color:black;}</style>
 <% } %>
-<% console.log(Dark) %>
+<!-- <% console.log(Dark) %> -->
 <!-- <h1>Home</h1>
 <p>Home </p> -->
 <div class="posting-body">
@@ -30,8 +30,12 @@
 <% Posts.forEach(function(post){%>
    <div class="container-fluid" id="posts" style="background-color: <%=post.color%>; color: <%=post.fontC%>;">
        <h1><%= post.title %></h1>
-    <p><%= post.body.substring(0, 100) + " ..." %> <a href="posts/<%= post.title%>">Read More</a> </p>
-       <%=console.log(post.color)%>
+       <%if(post.body.length >700){%>
+    <p><%= post.body.substring(0, 700) + " ..." %> <a href="posts/<%= post.title%>">Read More</a> </p>
+         <%}else{%>
+            <p><%=post.body%></p>
+            <%}%>
+    <%=console.log(post.color)%>
    </div>
 
 
