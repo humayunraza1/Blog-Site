@@ -1,10 +1,10 @@
-.container-fluid {
-    padding-top: 70px;
-    padding-bottom: 70px;
+.container-fluid{
+    width: 60%;
 }
 .navbar {
     padding-top: 15px;
     padding-bottom: 15px;
+    padding-left: 15px;
     border: 0;
     border-radius: 0;
     margin-bottom: 30px;
@@ -49,6 +49,7 @@
     border-radius: 10px;
     margin-bottom: 25px;
     width: 60%;
+    padding: 20px 40px 20px 40px;
 }
 
 #posts h1{
@@ -85,4 +86,9 @@
     width: 60%;
     position: relative;
     left: 20%;
+    margin-bottom: 20px;
+}
+
+.DarkMode{
+    left: 10px;
 }
