@@ -15,4 +15,9 @@
     <%=console.log(post.color)%>
 </div>
  <%});%>
-    <%- include("partials/footer") -%>
+
+ <% if(Dark == "true") { %> 
+   <%- include("partials/footerDark") -%>
+   <% } else{ %>
+      <%- include("partials/footer") -%>
+   <% } %>

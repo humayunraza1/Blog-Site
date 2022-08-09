@@ -24,16 +24,16 @@ app.get("/",function(req,res){
 })
 
 app.get("/about",function(req,res){
-  res.render("about",{About:aboutContent});
+  res.render("about",{About:aboutContent, Dark:isDark});
 })
 
 
 app.get("/contact",function(req,res){
-  res.render("contact",{Contact:contactContent});
+  res.render("contact",{Contact:contactContent, Dark:isDark});
 })
 
 app.get("/compose", function(req,res){
-  res.render("compose");
+  res.render("compose",{Dark:isDark});
 })
 
 
@@ -73,7 +73,7 @@ app.post("/dark", function(req,res){
   if(isDark == "false"){
     isDark = "true";
   } else isDark = "false";
-
+  console.log(req.originalUrl);
   res.redirect("/");
 })
 
@@ -83,7 +83,7 @@ app.get("/posts/:postName", function(req,res){
     if(_.lowerCase(req.params.postName)==_.lowerCase(post.title)){
       const Ptitle = post.title;
       const Pbody = post.body;
-      res.render("post",{PostT:Ptitle,PostB:Pbody})
+      res.render("post",{PostT:Ptitle,PostB:Pbody, Dark:isDark})
     } else console.log("invalid title");
   })
 })

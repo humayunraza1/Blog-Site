@@ -1,5 +1,9 @@
-<%- include("partials/header") -%>
-
+<% if(Dark == "true") { %>
+    <%- include("partials/headerDark") -%>
+    <style>body{background-color: black;} h1{ color: white;} label{ color: white;}</style>
+    <% } else{ %>
+       <%- include("partials/header") -%>
+    <% } %>
 <h1>Compose</h1>
 <div class="form-group col-sm-6">
     <form action="/" method="post">
@@ -18,4 +22,9 @@
     
 </div>
 
-<%- include("partials/footer") -%>
+<% if(Dark == "true") { %> 
+    <%- include("partials/footerDark") -%>
+    <% } else{ %>
+       <%- include("partials/footer") -%>
+    <% } %>
+ 

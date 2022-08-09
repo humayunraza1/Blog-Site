@@ -1,6 +1,15 @@
-<%- include("partials/header") -%>
-
+<% if(Dark == "true") { %>
+    <%- include("partials/headerDark") -%>
+    <style>body{background-color: black; color: white;}</style>
+    <% } else{ %>
+       <%- include("partials/header") -%>
+    <% } %>
 <h1>About</h1>
 <p><%= About %></p>
 
-<%- include("partials/footer") -%>
+<% if(Dark == "true") { %> 
+    <%- include("partials/footerDark") -%>
+    <% } else{ %>
+       <%- include("partials/footer") -%>
+    <% } %>
+ 

@@ -29,6 +29,11 @@
 	background-color: #1abc9c;
 }
 
+.footer-inverse{
+    color: white;
+    background-color:#222222;
+}
+
 .footer p {
 	margin-top: 25px;
 	font-size: 12px;
@@ -40,6 +45,8 @@
 }
 #posts{
     border-radius: 10px;
+    margin-bottom: 25px;
+    width: 60%;
 }
 
 #posts h1{
