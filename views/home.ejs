@@ -1,19 +1,40 @@
 
 <% if(Dark == "true") { %>
 <%- include("partials/headerDark") -%>
-<style>body{background-color: black; color: white;}</style>
+<style>body{background-color: black;} .posting-body label{color: white;}</style>
 <% } else{ %>
    <%- include("partials/header") -%>
+ <style>.posting-body label{color:black;}</style>
 <% } %>
 <% console.log(Dark) %>
-<h1>Home</h1>
-<p><%= Home %></p>
-<% Posts.forEach(function(post){%>
-<div class="container" id="posts" style="background-color: <%=post.color%>; color: <%=post.fontC%>;">
-    <h1><%= post.title %></h1>
- <p><%= post.body.substring(0, 100) + " ..." %> <a href="posts/<%= post.title%>">Read More</a> </p>
-    <%=console.log(post.color)%>
+<!-- <h1>Home</h1>
+<p>Home </p> -->
+<div class="posting-body">
+   <div class="form-group">
+      <form action="/" method="post">
+          <label for="">Title</label>
+          <input type="text" name="postTitle" class="form-control">
+  <select class="form-select" name="pColor" aria-label=".form-select-sm example">
+      <option selected>Choose Div Color</option>
+      <option value="1">Red</option>
+      <option value="2">Black</option>
+      <option value="3">White</option>
+    </select>
+          <label for="">Post</label>
+          <textarea class="form-control" id="exampleFormControlTextarea1" rows="5" cols="30" name="postBody"></textarea>
+          <button type="submit" name="button" class="btn btn-primary">Publish</button>
+      </form>
+      
+  </div>
 </div>
+<% Posts.forEach(function(post){%>
+   <div class="container-fluid" id="posts" style="background-color: <%=post.color%>; color: <%=post.fontC%>;">
+       <h1><%= post.title %></h1>
+    <p><%= post.body.substring(0, 100) + " ..." %> <a href="posts/<%= post.title%>">Read More</a> </p>
+       <%=console.log(post.color)%>
+   </div>
+
+
  <%});%>
 
  <% if(Dark == "true") { %> 

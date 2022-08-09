@@ -7,7 +7,7 @@
     padding-bottom: 15px;
     border: 0;
     border-radius: 0;
-    margin-bottom: 0;
+    margin-bottom: 30px;
     font-size: 12px;
     letter-spacing: 5px;
     position: relative;
@@ -21,7 +21,7 @@
 }
 
 .footer {
-	position: absolute;
+	position: fixed;
 	text-align: center;
 	bottom: 0;
 	width: 100%;
@@ -35,8 +35,10 @@
 }
 
 .footer p {
+    position: absolute;
 	margin-top: 25px;
 	font-size: 12px;
+    left: 48%;
   color: #fff;
 }
 
@@ -76,4 +78,11 @@
     position: absolute;
     right:  3%;
     bottom: 40%;
+}
+
+.posting-body{
+    color: black;
+    width: 60%;
+    position: relative;
+    left: 20%;
 }
