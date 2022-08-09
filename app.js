@@ -36,25 +36,6 @@ app.post("/", function(req,res){
   Color = req.body.pColor;
   font = req.body.fColor;
   
-  // switch (color) {
-  //   case "1":
-  //     colorName = "red";
-  //     fontColor = "black"
-  //     break;
-  //   case "2":
-  //     colorName = "Black";
-  //     fontColor = "white";
-  //     break;
-  //   case "3":
-  //     colorName = "White";
-  //     if(isDark == "true"){
-  //       fontColor="White";
-  //     } else fontColor = "black";
-  //     break;   
-  //   default:
-  //     console.log("No Color Selected")
-  //     break;
-  // }
   const post = {
     title: Title,
     body: content,
