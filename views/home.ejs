@@ -7,18 +7,22 @@
  <style>.posting-body label{color:black;}</style>
 <% } %>
 <div class="posting-body">
-   <div class="form-group">
+   <div class="form-group row">
       <form action="/" method="post">
+         <div class="">
           <label for="">Title</label>
-          <input type="text" name="postTitle" class="form-control">
-          <label for="">Choose Post Color</label>
-          <select class="form-control col-sm" name="pColor" aria-label=".form-select-sm example">    
-         <option value="1" selected>Red</option>
-           <option value="2">Black</option>
-          <option value="3">White</option>
-    </select>
+          <input type="text" name="postTitle" class="form-control" autocomplete="off">
+         </div>
+         <div class="col-lg-6 position-absolute colordiv">
+         <label for="exampleColorInput" class="form-label">Color</label>
+          <input type="color" class="form-control form-control-color" name="pColor" id="exampleColorInput" value="#563d7c" title="Choose your color">
+         </div>
+          <div class="col-lg-6">
+          <label for="exampleColorInput" class="form-label">Font Color</label>
+          <input type="color" class="form-control form-control-color" name="fColor" id="exampleColorInput" value="#ffffff" title="Choose your color">
+         </div>
           <label for="">Post</label>
-          <textarea class="form-control" id="exampleFormControlTextarea1" rows="5" cols="30" name="postBody"></textarea>
+          <textarea class="form-control" id="exampleFormControlTextarea1" rows="5" cols="30" name="postBody" required></textarea>
           <button type="submit" name="button" class="btn btn-primary">Publish</button>
       </form>
       
@@ -26,14 +30,15 @@
 </div>
 
 <% Posts.forEach(function(post){%>
-   <div class="container-fluid" id="posts" style="background-color: <%=post.color%>; color: <%=post.fontC%>;">
+   <%const postColor = post.color %>
+   <%console.log(postColor)%>
+   <div class="container-fluid" id="posts" style="background-color: <%=postColor%>; color: <%=post.fontC%>;">
        <h1><%= post.title %></h1>
        <%if(post.body.length >700){%>
     <p><%= post.body.substring(0, 700) + " ..." %> <a href="posts/<%= post.title%>">Read More</a> </p>
          <%}else{%>
             <p><%=post.body%></p>
             <%}%>
-    <%=console.log(post.color)%>
    </div>
 
 
