@@ -8,11 +8,15 @@
 <% } %>
 <div class="posting-body">
    <div class="form-group row">
-      <form action="/" method="post">
+      <form action="/" method="post" enctype="multipart/form-data">
          <div class="">
           <label for="">Title</label>
           <input type="text" name="postTitle" class="form-control" autocomplete="off">
          </div>
+         <div class="mb-3">
+            <label for="formFileSm" class="form-label">Upload Picture</label>
+            <input class="form-control form-control-sm" id="formFileSm" type="file" name="picture">
+          </div>
          <div class="col-lg-6 position-absolute colordiv">
          <label for="exampleColorInput" class="form-label">Color</label>
           <input type="color" class="form-control form-control-color" name="pColor" id="exampleColorInput" value="#563d7c" title="Choose your color">
@@ -33,12 +37,22 @@
    <%const postColor = post.color %>
    <%console.log(postColor)%>
    <div class="container-fluid" id="posts" style="background-color: <%=postColor%>; color: <%=post.fontC%>;">
+      <%if(post.pic != ''){%>
+      <img src="http://localhost:3000/images/<%=typeof post.pic != '' ? post.pic: ''%>" alt="" class="img-fluid rounded">
        <h1><%= post.title %></h1>
        <%if(post.body.length >700){%>
     <p><%= post.body.substring(0, 700) + " ..." %> <a href="posts/<%= post.title%>">Read More</a> </p>
          <%}else{%>
             <p><%=post.body%></p>
             <%}%>
+            <%}else{%>
+               <h1><%= post.title %></h1>
+               <%if(post.body.length >700){%>
+            <p><%= post.body.substring(0, 700) + " ..." %> <a href="posts/<%= post.title%>">Read More</a> </p>
+                 <%}else{%>
+                    <p><%=post.body%></p>
+                    <%}%>
+               <%}%>
    </div>
 
 
