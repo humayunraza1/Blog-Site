@@ -33,7 +33,7 @@
   </div>
 </div>
 
-<% Posts.forEach(function(post){%>
+<%  Posts.slice().reverse().forEach(function(post){%>
    <%const postColor = post.color %>
    <%console.log(postColor)%>
    <div class="container-fluid" id="posts" style="background-color: <%=postColor%>; color: <%=post.fontC%>;">
